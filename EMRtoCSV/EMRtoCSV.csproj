@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Seca.EmrContract, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\seca\Sample Modules\Bin\secaEmrApi\Seca.EmrContract.dll</HintPath>
+      <HintPath>lib\Seca.EmrContract.dll</HintPath>
     </Reference>
     <Reference Include="Seca.Framework.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\seca\Sample Modules\Bin\secaEmrApi\Seca.Framework.Core.dll</HintPath>
+      <HintPath>lib\Seca.Framework.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +46,9 @@
   <ItemGroup>
     <Compile Include="EmrToCsv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
