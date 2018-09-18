@@ -5,7 +5,7 @@ using Seca.EmrContract.Measurements;
 
 namespace EMRtoCSV
 {
-    [EmrModule("EMRtoCSV", "Sends measurements to a CSV file | Noah Stride | 1.01", null)]
+    [EmrModule("EMRtoCSV", "Sends measurements to a CSV file | Noah Stride | RC3", null)]
     public class EMRtoCSV: Seca.EmrContract.Module
     {
         private string path = @"c:\secadata\data.csv";
@@ -15,7 +15,11 @@ namespace EMRtoCSV
             string height = measurement.HeightMeasurement.ToString(".", LengthUnit.Meter);
             string weight = measurement.WeightMeasurement.ToString(".", MassUnit.Kilograms);
 
-            string time = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK");
+            height = height.Split(' ')[0];
+            weight = weight.Split(' ')[0];
+
+            string time = DateTime.Now.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
+            
             
             using (StreamWriter w = File.AppendText(path))
             {
